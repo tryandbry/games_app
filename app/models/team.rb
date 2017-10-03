@@ -1,4 +1,4 @@
 class Team < ActiveRecord::Base
-  has_many :game, as: :teamhome
-  has_many :game, as: :teamaway
+  has_many :homegames
+  has_many :games, through: :homegames
 end

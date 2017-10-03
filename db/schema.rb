@@ -11,17 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003163746) do
+ActiveRecord::Schema.define(version: 20171003194645) do
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "scorehome"
     t.integer  "scoreaway"
-    t.boolean  "result"
-    t.integer  "teamhome"
-    t.integer  "teamaway"
   end
+
+  create_table "homegames", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "team_id"
+    t.boolean "home"
+  end
+
+  add_index "homegames", ["game_id"], name: "index_homegames_on_game_id"
+  add_index "homegames", ["team_id"], name: "index_homegames_on_team_id"
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
