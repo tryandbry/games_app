@@ -1,6 +1,6 @@
 class TeamGameAssociation < ActiveRecord::Migration
   def change
-    change_table :game do |t|
+    change_table :games do |t|
       t.integer :teamhome
       t.integer :teamaway
     end

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20171003163746) do
 
-  create_table "game", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "scorehome"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171003163746) do
     t.integer  "teamaway"
   end
 
-  create_table "team", force: :cascade do |t|
+  create_table "teams", force: :cascade do |t|
     t.string "name"
   end
 
