@@ -1,1 +1,26 @@
 <h1>Games</h1>
+<table>
+  <tbody>
+    <tr>
+      <th>Game #</th>
+      <th>Score - Home Team</th>
+      <th>Score - Away Team</th>
+      <th>Team</th>
+      <th>Home or Away</th>
+    </tr>
+    <% @season.each do |row| %>
+      <tr>
+        <td><%= row["game_id"] %></td>
+        <td><%= row["scorehome"] %></td>
+        <td><%= row["scoreaway"] %></td>
+        <td><%= row["name"] %></td>
+        <td><% if row["home"] == 't' %>
+        Home
+        <% else %>
+        Away
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
