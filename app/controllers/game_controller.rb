@@ -5,14 +5,14 @@ class GameController < ApplicationController
 #      inner join homegames on games.id=homegames.game_id
 #      inner join teams on teams.id=homegames.team_id")
     #@test1 = Game.joins(:homegames).select("#{:homegames}.home")
-    @season = Game.joins(:homegames,:teams).select(
+    @season = Game.joins(:teams).select(
       :id,
       :scorehome,
       :scoreaway,
       "#{:teams}.name",
       "#{:homegames}.home",
     )
-    @test1 = @season
+    #@test1 = @season
   end
 end
 
