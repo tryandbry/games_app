@@ -1,3 +1,4 @@
+<%#= debug @test1 %>
 <h1>Games</h1>
 <table>
   <tbody>
@@ -10,11 +11,11 @@
     </tr>
     <% @season.each do |row| %>
       <tr>
-        <td><%= row["game_id"] %></td>
-        <td><%= row["scorehome"] %></td>
-        <td><%= row["scoreaway"] %></td>
-        <td><%= row["name"] %></td>
-        <td><% if row["home"] == 't' %>
+        <td><%= row[:id] %></td>
+        <td><%= row[:scorehome] %></td>
+        <td><%= row[:scoreaway] %></td>
+        <td><%= row[:name] %></td>
+        <td><% if row[:home] == 't' %>
         Home
         <% else %>
         Away

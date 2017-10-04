@@ -1,10 +1,18 @@
 class GameController < ApplicationController
   def index
-    @season = ActiveRecord::Base.connection.execute(
-      "select game_id,scorehome,scoreaway,name,home from games
-      inner join homegames on games.id=homegames.game_id
-      inner join teams on teams.id=homegames.team_id")
-
+#    @season = ActiveRecord::Base.connection.execute(
+#      "select game_id,scorehome,scoreaway,name,home from games
+#      inner join homegames on games.id=homegames.game_id
+#      inner join teams on teams.id=homegames.team_id")
+    #@test1 = Game.joins(:homegames).select("#{:homegames}.home")
+    @season = Game.joins(:homegames,:teams).select(
+      :id,
+      :scorehome,
+      :scoreaway,
+      "#{:teams}.name",
+      "#{:homegames}.home",
+    )
+    @test1 = @season
   end
 end
 
