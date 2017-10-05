@@ -1,27 +1,33 @@
 <%#= debug @test1 %>
-<h1>Games</h1>
-<table>
-  <tbody>
-    <tr>
-      <th>Game #</th>
-      <th>Score - Home Team</th>
-      <th>Score - Away Team</th>
-      <th>Team</th>
-      <th>Home or Away</th>
-    </tr>
-    <% @season.each do |row| %>
-      <tr>
-        <td><%= row[:id] %></td>
-        <td><%= row[:scorehome] %></td>
-        <td><%= row[:scoreaway] %></td>
-        <td><%= row[:name] %></td>
-        <td><% if row[:home] == 't' %>
-        Home
-        <% else %>
-        Away
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="c-h1">Games</h1>
+    <table class="table table-striped table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Game #</th>
+          <th>Score - Home Team</th>
+          <th>Score - Away Team</th>
+          <th>Team</th>
+          <th>Home or Away</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @season.each do |row| %>
+          <tr>
+            <td><%= row[:id] %></td>
+            <td><%= row[:scorehome] %></td>
+            <td><%= row[:scoreaway] %></td>
+            <td><%= row[:name] %></td>
+            <td><% if row[:home] == 't' %>
+            Home
+            <% else %>
+            Away
+            <% end %>
+            </td>
+          </tr>
         <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
