@@ -16,6 +16,8 @@ class StatController < ApplicationController
       )
     @season = @test1
 
+
+
 =begin
     @season = Game
       .joins(:teams,:homegames)
