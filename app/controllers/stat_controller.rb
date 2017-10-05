@@ -14,7 +14,9 @@ class StatController < ApplicationController
           end) as scoreavg",
         "abs(sum(scorehome)-sum(scoreaway)) / count(games.id) as deltaavg"
       )
-      
+    @season = @test1
+
+=begin
     @season = Game
       .joins(:teams,:homegames)
       .group("#{:teams}.name","#{:homegames}.home")
@@ -28,6 +30,7 @@ class StatController < ApplicationController
           end) as scoreavg",
         "abs(sum(scorehome)-sum(scoreaway)) / count(games.id) as deltaavg"
       )
+=end
 
     #@season = {}
 =begin
